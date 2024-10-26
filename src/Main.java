@@ -7,10 +7,10 @@ public class Main {
         // Criando scanner, para receber os valores via terminal
         Scanner scanner = new Scanner(System.in);
 
-        // Apresentação do programa
-        System.out.println("Olá, seja bem-vindo ao Net.Calculator!");
-        System.out.println("Por favor, escreva os valores de velocidade da sua internet separados por vírgula!");
-
+        // Apresentação do programa (comentado, mas pode ser ativado)
+        // System.out.println("Olá, seja bem-vindo ao Net.Calculator!");
+        // System.out.println("Por favor, escreva os valores de velocidade da sua internet separados por vírgula!");
+        
         // Recebendo valores do cliente via terminal através do scanner
         String input = scanner.nextLine();
 
@@ -23,11 +23,13 @@ public class Main {
                             .mapToDouble(valor -> Double.parseDouble(valor.trim())) 
                             .sum();
 
+        // Calculando a média
         double media = soma / valoresInternet.length; 
 
-        // Exibe os resultados
-        System.out.println("A média dos valores é:" + media + "Mbps");
+        // Exibindo os resultados
+        System.out.println((int) media + " Mbps");
 
-        scanner.close();  // Fecha o Scanner
+        // Fechando o scanner (boa prática)
+        scanner.close();  
     }
 }
